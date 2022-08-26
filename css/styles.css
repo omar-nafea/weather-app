@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ :root {
+    --main-color: #222831;
+    --sec-color: #EEEEEE;
+    /* --third-color: #393E46; */
+    --fourth-color: #00ADB5;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    border-radius: 0.5rem;
+    background-color: var(--sec-color);
+    padding: 1rem;
+    min-width: 25rem;
+}
+
+.header h1 {
+    text-align: center;
+    color: var(--fourth-color);
+    position: relative;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.header h1::after {
+    content: '';
+    position: absolute;
+    left: 0rem;
+    top: 4rem;
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--main-color);
+}
+
+.body {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.body .search_bar {
+    width: 20rem;
+    background-color: var(--sec-color);
+    outline: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    justify-self: center;
+    color: var(--main-color);
+    border: 1px solid #b3b3b3;
+    margin-bottom: -1rem;
+    text-transform: capitalize;
+}
+
+.body .details {
+    width: 20rem;
+    background-color: rgba(0, 255, 128, 0.327);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    justify-self: center;
+    color: #000;
+}
+
+.body .alt_error {
+    width: 20rem;
+    background-color: rgba(255, 0, 0, 0.4);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    justify-self: center;
+    color: #fff;
+}
+
+ ::placeholder {
+    text-align: center;
+}
+
+.separator {
+    height: 1px;
+    width: 100%;
+    margin: 25px 0;
+    background: #ccc;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separator::before {
+    content: "or";
+    color: #b3b3b3;
+    font-size: 19px;
+    padding: 0 15px;
+    background: var(--sec-color);
+}
+
+.body .findMyLocation {
+    width: 20rem;
+    background-color: var(--fourth-color);
+    outline: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    justify-self: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.body .icon {
+    position: absolute;
+    right: 2rem;
+    top: 1.7rem;
+    color: var(--fourth-color);
+    cursor: pointer;
+}
+
+.data {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.data .imag {
+    grid-column: 1 / 3;
+    justify-self: center;
+    margin-top: 1rem;
+}
+
+.data .the {
+    color: var(--fourth-color);
+}
+
+.data .imag img {
+    width: 8rem;
+    height: 8rem;
+}
+
+.data .temp {
+    grid-column: 1 / 3;
+    justify-self: center;
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+}
+
+.data .description {
+    font-size: 1.3rem;
+    grid-column: 1 / 3;
+    justify-self: center;
+    margin-top: -0.5rem;
+}
+
+.data .cityName {
+    grid-column: 1 / 3;
+    justify-self: center;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+
+.data .humidity {
+    margin: 1rem 3rem;
+    position: relative;
+}
+
+.data .humidity::after {
+    content: '';
+    position: absolute;
+    left: -4rem;
+    bottom: 3rem;
+    width: 25rem;
+    height: 0.1rem;
+    background-color: var(--main-color);
+}
+
+.data .humidity::before {
+    content: '';
+    position: absolute;
+    left: 7.5rem;
+    top: -0.2rem;
+    width: 0.1rem;
+    height: 180%;
+    background-color: var(--main-color);
+}
+
+@media screen and (max-width: 600px) {
+    .body {
+        max-width: 20rem;
+        justify-content: center;
+    }
+    .card {
+        min-width: 20rem;
+    }
+    .data .humidity::after {
+        width: 21.4rem;
+    }
+    .data .humidity::before {
+        height: 180%;
+        left: 6.5rem;
+        top: -0.24rem;
+    }
+}
+
+.data .humidity .value {
+    font-size: 1.5rem;
+}
+
+.data .humidity .name {
+    font-size: 1rem;
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    color: #3F72AF;
+}
+
+.data .windSpeed {
+    margin: 1rem 2rem;
+    position: relative;
+}
+
+.data .windSpeed .value {
+    font-size: 1.5rem;
+}
+
+.data .windSpeed .name {
+    font-size: 1rem;
+    position: absolute;
+    left: 1rem;
+    top: 2rem;
+    color: #3F72AF;
+}
